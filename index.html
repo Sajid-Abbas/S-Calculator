@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+        
+        <div class="container-1">
+            <h1>CASIO<input type="box" name="box" class="box"></h1>
+            <h5 style="text-align:left ; margin-left: 10px;">fx 991ES PLUS</h5>
+          
+        </div>
+        <input type="text" id="input"><br>
+        <button onclick="getinput('c')">c</button>
+        <button onclick="del()">del</button>
+        <button onclick="getinput('%')">%</button>
+        <button onclick="getinput('/')">/</button>
+        <br>
+      
+
+        <button onclick="getinput(7)">7</button>
+        <button onclick="getinput(8)">8</button>
+        <button onclick="getinput(9)">9</button>
+        <button onclick="getinput('*')">*</button>
+        <br>
+        <button onclick="getinput(4)">4</button>
+        <button onclick="getinput(5)">5</button>
+        <button onclick="getinput(6)">6</button>
+        <button onclick="getinput('-')">-</button>
+    <br>
+        <button onclick="getinput(1)">1</button>
+        <button onclick="getinput(2)">2</button>
+        <button onclick="getinput(3)">3</button>      
+        <button onclick="getinput('+')">+</button>
+        <br>
+        <button onclick="getinput(00)">00</button>
+        <button onclick="getinput(0)">0</button>
+        <button onclick="getinput('=')">=</button>
+        <button onclick="getinput('.')">.</button>
+        <br>
+        <!-- <button type="button" value="sin" onclick="onclicked()"> sin</button>
+        <button type="button" value="sin" onclick="onclicked()">cos </button>
+        <button type="button" value="sin" onclick="onclicked()"> tan</button> -->
+        <!-- <button onclick="getinput(',')">,</button> -->
+
+
+
+    </div>
+
+    <script>
+
+        var ok=0;
+
+        function getinput(i){
+            var x=i;
+           
+            if(x==='='){
+                document.getElementById('input').value = eval(document.getElementById('input').value)
+            }else if(x==='+' ||x==='*'|| x==='-'|| x==='/' || x==='%' || x==='.' ) {
+                if(ok===0){
+                    document.getElementById('input').value +=i;
+                    ok =1;
+                }
+              
+
+            }else if(x==='c'){
+                document.getElementById('input').value ='';
+                
+            }else if(x==='de'){
+                document.getElementById('input').value ='';
+                
+            }
+             else{
+                document.getElementById('input').value+=i;
+                ok=0;
+
+            }
+        }
+        var result = document.getElementById("input")
+        function del(){
+            result.value = result.value.slice(0,-1);
+        }
+    </script>
+</body>
+</html>
